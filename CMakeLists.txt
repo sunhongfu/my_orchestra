@@ -33,6 +33,9 @@ add_subdirectory (Flex)
 add_subdirectory (Spectroscopy)
 add_subdirectory (Spiral)
 
+# downloaded projects
+add_subdirectory (SWI)
+
 # Hongfu's projects
 add_subdirectory (HS_ModHeader)
 add_subdirectory (HS_PrintHeader)
