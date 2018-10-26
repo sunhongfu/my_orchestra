@@ -1,0 +1,43 @@
+TOOLSET = APPLE_OSX
+
+CxxCompileFlags( $(CXXRECONOXFLAGS) -I$(TOP)/lx/include )
+
+LINKERFLAGS = \
+    -L$(TOP)/recon/Orchestra/Cartesian2D/mac64 \
+    -L$(TOP)/recon/Orchestra/Gradwarp/mac64 \
+    -L$(TOP)/recon/Orchestra/Asset/mac64 \
+    -L$(TOP)/recon/Orchestra/Arc/mac64 \
+    -L$(TOP)/recon/Orchestra/Core/mac64 \
+    -L$(TOP)/recon/Orchestra/Legacy/mac64 \
+    -L$(TOP)/recon/Orchestra/Control/mac64 \
+    -L$(TOP)/recon/Orchestra/Common/mac64 \
+    -L$(TOP)/recon/Orchestra/Crucial/mac64
+
+LIBS = \
+    -lOrchestraCartesian2D \
+    -lOrchestraGradwarp \
+    -lOrchestraAsset \
+    -lOrchestraCore \
+    -lOrchestraCrucial \
+    -lOrchestraLegacy \
+    -lOrchestraControl \
+    -lOrchestraCommon \
+    -lOrchestraAsset \
+    -lOrchestraArc \
+    LinkWithReconHdf5 \
+	LinkWithReconDicom \
+	LinkWithReconMath \
+	LinkWithReconSystem \
+    LinkWithBoost \
+    LinkWithLapack \
+	LinkWithFFTW \
+    LinkWithBlitz \
+    -lpthread \
+    -lstdc++ \
+    -ldl \
+    -framework System
+
+#include "../Imakefile.common"
+
+LinkUsingCxx($(EXECUTABLE), $(OBJS), $(CXXLIBFLAGS) $(LINKERFLAGS) $(LIBS))
+Generate64BitCode()
