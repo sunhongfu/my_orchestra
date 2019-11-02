@@ -6,7 +6,7 @@ project(my_orchestra)
 #set(CMAKE_VERBOSE_MAKEFILE ON)
 
 # TOPDIR is the root of the source tree
-set(OX_INSTALL_DIRECTORY "/Users/hongfusun/Applications/orchestra-sdk-1.7-1")
+set(OX_INSTALL_DIRECTORY "/Users/uqhsun8/code/orchestra-sdk-1.7-1")
 set(TOPDIR "${OX_INSTALL_DIRECTORY}/include")
 set(LARGE_LIBRARY_TYPE STATIC)
 
