@@ -46,7 +46,8 @@ int main(const int argc, const char* const argv[])
     // Create PfileReader to read the original raw header. Do not anonymize
     // any fields to leave it up to the user of the new modified Pfile.
     const AnonymizationPolicy noAnonymizationPolicy(AnonymizationPolicy::None);
-    Legacy::PfileReader pfileReader(pfilePath, false, noAnonymizationPolicy, 25.002f);
+    // Legacy::PfileReader pfileReader(pfilePath, false, noAnonymizationPolicy, 25.002f);
+    Legacy::PfileReader pfileReader(pfilePath, false, noAnonymizationPolicy);
     
     
     // Read POOL Header
