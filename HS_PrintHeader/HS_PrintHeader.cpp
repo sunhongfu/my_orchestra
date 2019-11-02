@@ -35,21 +35,24 @@
 using namespace GERecon;
 using namespace MDArray;
 
-
-int main(const int argc, const char* const argv[])
+int main(const int argc, const char *const argv[])
 {
     GESystem::ProgramOptions().SetupCommandLine(argc, argv);
-    
+
     // Read Pfile from command line
     const boost::filesystem::path pfilePath = CommandLine::PfilePath();
-    
+
     // Create PfileReader to read the original raw header. Do not anonymize
     // any fields to leave it up to the user of the new modified Pfile.
     const AnonymizationPolicy noAnonymizationPolicy(AnonymizationPolicy::None);
     // Legacy::PfileReader pfileReader(pfilePath, false, noAnonymizationPolicy, 25.002f);
     Legacy::PfileReader pfileReader(pfilePath, false, noAnonymizationPolicy);
+<<<<<<< HEAD
     
     
+=======
+
+>>>>>>> 3de4657b0758ea3dfbecbd60a62b0b92ff71eb63
     // Read POOL Header
     Legacy::PoolHeaderStruct header;
     pfileReader.ReadHeader(header);
